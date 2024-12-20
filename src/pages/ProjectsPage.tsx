@@ -15,6 +15,7 @@ const ProjectsPage: React.FC = () => {
       description:
         "A PHP-based e-commerce website for backpack sales with a secure admin panel and responsive design.",
       link: "https://github.com/ajxd/backpackbazaar",
+      techStack: ["PHP", "HTML5", "CSS3", "MySQL"],
     },
     {
       src: "/2.png",
@@ -22,6 +23,7 @@ const ProjectsPage: React.FC = () => {
       description:
         "An Android e-commerce app using Java and Firebase, featuring Google Authentication and Stripe Payment Integration.",
       link: "https://github.com/ajxd/Fusion-clothing",
+      techStack: ["Java", "Firebase", "Stripe", "Android"],
     },
     {
       src: "/3.png",
@@ -29,6 +31,7 @@ const ProjectsPage: React.FC = () => {
       description:
         "A Flutter-based food delivery app with real-time order updates, location tracking, and secure payment integration.",
       link: "https://github.com/ajxd/FoodMart",
+      techStack: ["Flutter", "Dart", "Firebase", "Google Maps API"],
     },
     {
       src: "/4.png",
@@ -36,6 +39,7 @@ const ProjectsPage: React.FC = () => {
       description:
         "An e-commerce website for craft sales with Stripe payment integration and a chatbot for customer support.",
       link: "https://github.com/Nikhil-9315/PROG8750-24W-Sec7-Group1",
+      techStack: ["Node.js", "Express", "Stripe", "Chatbot"],
     },
     {
       src: "/5.png",
@@ -43,6 +47,7 @@ const ProjectsPage: React.FC = () => {
       description:
         "A browser-based interactive card game developed with JavaScript, featuring game logic and responsive design.",
       link: "https://github.com/ajxd/cardsgame",
+      techStack: ["JavaScript", "HTML5", "CSS3"],
     },
     {
       src: "/6.png",
@@ -50,6 +55,7 @@ const ProjectsPage: React.FC = () => {
       description:
         "An ASP.NET web application for movie ticket sales, implemented with the MVC pattern for scalability.",
       link: "https://github.com/ajxd/Movie",
+      techStack: [".NET", "C#", "SQL Server", "MVC"],
     },
     {
       src: "/7.png",
@@ -57,12 +63,14 @@ const ProjectsPage: React.FC = () => {
       description:
         "A .NET-based registration system with real-time validation and secure database integration for streamlined data collection.",
       link: "https://github.com/ajxd/Registrationform",
+      techStack: [".NET", "C#", "HTML5", "MySQL"],
     },
   ];
 
   const rotateCarousel = (direction: "left" | "right") => {
     const angle = 360 / projectLogos.length;
-    const newRotation = direction === "right" ? currentRotation - angle : currentRotation + angle;
+    const newRotation =
+      direction === "right" ? currentRotation - angle : currentRotation + angle;
     setCurrentRotation(newRotation);
   };
 
@@ -79,7 +87,7 @@ const ProjectsPage: React.FC = () => {
       const cards = carouselRef.current?.querySelectorAll<HTMLDivElement>(".carousel-card");
       if (!cards) return;
 
-      const translateZ = 300;
+      const translateZ = 400;
 
       cards.forEach((card, index) => {
         const normalizedIndex = index - calculateActiveProjectIndex();
@@ -111,13 +119,37 @@ const ProjectsPage: React.FC = () => {
     <div
       onMouseMove={handleMouseMove}
       style={{
-        backgroundColor: "#1a1a1a",
+        backgroundColor: "#0d1117",
         color: "#ffffff",
         overflow: "hidden",
         position: "relative",
         minHeight: "100vh",
       }}
     >
+      {/* Hero Section */}
+      <div
+        style={{
+          position: "relative",
+          textAlign: "center",
+          padding: "14rem 0",
+          zIndex: 2,
+        }}
+      >
+        <h1
+          style={{
+            fontSize: "14rem",
+            fontWeight: "bold",
+            color: "#1DB954",
+            marginBottom: "1rem",
+          }}
+        >
+          
+        </h1>
+        <p style={{ fontSize: "1.5rem", color: "#aaa" }}>
+          Explore projects that transform ideas into reality.
+        </p>
+      </div>
+
       {/* Full-Screen Spline 3D Background */}
       <div
         style={{
@@ -164,7 +196,9 @@ const ProjectsPage: React.FC = () => {
               transformStyle: "preserve-3d",
               borderRadius: "15px",
               animation: "float 3s ease-in-out infinite",
+              cursor: "pointer",
             }}
+            onClick={() => window.open(project.link, "_blank")}
           >
             <motion.img
               src={project.src}
@@ -280,3 +314,4 @@ const ProjectsPage: React.FC = () => {
 };
 
 export default ProjectsPage;
+
