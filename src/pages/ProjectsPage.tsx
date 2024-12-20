@@ -14,42 +14,49 @@ const ProjectsPage: React.FC = () => {
       title: "Backpack Bazaar",
       description:
         "A PHP-based e-commerce website for backpack sales with a secure admin panel and responsive design.",
+      link: "https://github.com/ajxd/backpackbazaar",
     },
     {
       src: "/2.png",
       title: "Fusion Clothing",
       description:
         "An Android e-commerce app using Java and Firebase, featuring Google Authentication and Stripe Payment Integration.",
+      link: "https://github.com/ajxd/Fusion-clothing",
     },
     {
       src: "/3.png",
       title: "Food Mart",
       description:
         "A Flutter-based food delivery app with real-time order updates, location tracking, and secure payment integration.",
+      link: "https://github.com/ajxd/FoodMart",
     },
     {
       src: "/4.png",
       title: "Craft Voyage",
       description:
         "An e-commerce website for craft sales with Stripe payment integration and a chatbot for customer support.",
+      link: "https://github.com/Nikhil-9315/PROG8750-24W-Sec7-Group1",
     },
     {
       src: "/5.png",
       title: "Card Game",
       description:
         "A browser-based interactive card game developed with JavaScript, featuring game logic and responsive design.",
+      link: "https://github.com/ajxd/cardsgame",
     },
     {
       src: "/6.png",
       title: "Movie Master",
       description:
         "An ASP.NET web application for movie ticket sales, implemented with the MVC pattern for scalability.",
+      link: "https://github.com/ajxd/Movie",
     },
     {
       src: "/7.png",
       title: "Dynamic Registration System",
       description:
         "A .NET-based registration system with real-time validation and secure database integration for streamlined data collection.",
+      link: "https://github.com/ajxd/Registrationform",
     },
   ];
 
@@ -252,6 +259,21 @@ const ProjectsPage: React.FC = () => {
         <p style={{ fontSize: "1.2rem", textAlign: "center" }}>
           {projectLogos[activeProjectIndex].description}
         </p>
+        <a
+          href={projectLogos[activeProjectIndex].link}
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{
+            display: "block",
+            marginTop: "10px",
+            textAlign: "center",
+            color: "#1DB954",
+            fontWeight: "bold",
+            textDecoration: "none",
+          }}
+        >
+          View on GitHub
+        </a>
       </motion.div>
     </div>
   );
